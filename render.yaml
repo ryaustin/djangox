@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: djangox
+    databaseName: djangox
+    user: djangox
 
 services:
   - type: web
-    name: mysite
+    name: djangox
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn djangox.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: djangox
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
