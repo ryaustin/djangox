@@ -22,8 +22,9 @@ RUN set -ex && \
     rm -rf /root/.cache/
 COPY . /code
 
-ENV SECRET_KEY "7G4O3lV2o1bjSRrjsQzLJNpxPdAXwA62TxMskjsPdJ5mH2uARn"
+ENV SECRET_KEY 
 RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate
 
 EXPOSE 8000
 
