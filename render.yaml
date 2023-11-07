@@ -5,10 +5,10 @@ databases:
 
 services:
   - type: web
-    name: djangox
+    name: django_project
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn djangox.wsgi:application"
+    startCommand: "gunicorn django_project.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
